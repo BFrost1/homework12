@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="customer" class="homework12.model.Customer">
+		<property name="customerName" value="customer" />
+		<property name="cart" ref="cart" />
+	</bean>
+
+	<bean id="cart" class="homework12.model.Cart">
+		<property name="maxSize" value="5" />
+		<property name="cart">
+			<map>
+				<entry key="1" value-ref="product1"/>
+				<entry key="2" value-ref="product2"/>
+				<entry key="3" value-ref="product3"/>
+				<entry key="4" value-ref="product4"/>
+				<entry key="5" value-ref="product5"/>					
+			</map>
+		</property>
+	</bean>
+
+	<bean id="product1" class="homework12.model.Product">
+		<property name="productName" value="XMLproduct1" />
+		<property name="price" value="10" />
+	</bean>
+
+	<bean id="product2" class="homework12.model.Product">
+		<property name="productName" value="XMLproduct2" />
+		<property name="price" value="20" />
+	</bean>
+
+	<bean id="product3" class="homework12.model.Product">
+		<property name="productName" value="XMLproduct3" />
+		<property name="price" value="30" />
+	</bean>
+
+	<bean id="product4" class="homework12.model.Product">
+		<property name="productName" value="XMLproduct4" />
+		<property name="price" value="40" />
+	</bean>
+
+	<bean id="product5" class="homework12.model.Product">
+		<property name="productName" value="XMLproduct5" />
+		<property name="price" value="50" />
+	</bean>
+</beans>
